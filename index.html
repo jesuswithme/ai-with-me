@@ -384,6 +384,13 @@
           </div>
 
           <div class="field">
+            <label for="email">이메일 주소 <span class="req">*</span></label>
+            <span class="hint">접수 확인 및 안내 메일을 받아보실 이메일 주소</span>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="example@gmail.com">
+            <div class="err" id="err-email">올바른 이메일 주소를 입력해 주세요. (예: example@gmail.com)</div>
+          </div>
+
+          <div class="field">
             <label for="when">희망 교육 일정 및 시간대 <span class="req">*</span></label>
             <span class="hint">예: 평일 저녁 7시 이후 / 토요일 오전 / 11월 25일(화) 오후 2시경</span>
             <input type="text" id="when" name="when" placeholder="편하게 적어 주세요">
@@ -515,6 +522,7 @@
   var ENTRY = {
     name:  "entry.1113578858",   // 성함
     phone: "entry.182339144",    // 연락처
+    email: "entry.1347331574",   // 이메일 주소
     when:  "entry.1106496393",   // 희망 교육 일정 및 시간대
     people:"entry.1794188126",   // 참여 인원 (드롭다운)
     need:  "entry.1480312824"    // 현재 AI 활용 수준 및 배우고 싶은 내용
@@ -546,6 +554,9 @@
     var digits = phone.replace(/[^0-9]/g, "");
     var phoneOk = digits.length >= 9 && digits.length <= 11;
     setErr("err-phone", !phoneOk); if (!phoneOk) ok = false;
+    var email = clean(document.getElementById("email").value);
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    setErr("err-email", !emailOk); if (!emailOk) ok = false;
     setErr("err-when", !when); if (!when) ok = false;
     setErr("err-people", !people); if (!people) ok = false;
     setErr("err-agree", !agree); if (!agree) ok = false;
@@ -557,6 +568,7 @@
     p.set("usp", "pp_url");
     p.set(ENTRY.name, clean(document.getElementById("name").value));
     p.set(ENTRY.phone, clean(document.getElementById("phone").value));
+    p.set(ENTRY.email, clean(document.getElementById("email").value));
     p.set(ENTRY.when, clean(document.getElementById("when").value));
     p.set(ENTRY.people, document.getElementById("people").value);
     p.set(ENTRY.need, clean(document.getElementById("need").value));
@@ -567,6 +579,7 @@
     var rows = [
       ["성함", clean(document.getElementById("name").value)],
       ["연락처", clean(document.getElementById("phone").value)],
+      ["이메일", clean(document.getElementById("email").value)],
       ["희망 일정", clean(document.getElementById("when").value)],
       ["참여 인원", document.getElementById("people").value]
     ];
@@ -618,6 +631,7 @@
 
     add(ENTRY.name, clean(document.getElementById("name").value));
     add(ENTRY.phone, clean(document.getElementById("phone").value));
+    add(ENTRY.email, clean(document.getElementById("email").value));
     add(ENTRY.when, clean(document.getElementById("when").value));
     add(ENTRY.people, document.getElementById("people").value);
     if (need) add(ENTRY.need, need);
