@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI와 친해지기 · 맞춤형 1:1 AI 교육 신청</title>
+<meta name="description" content="IT 전문 강사 이용식의 'AI와 친해지기' — ChatGPT 기초부터 실생활·업무 활용까지, 눈높이에 맞춘 1:1 및 소그룹 AI 교육 신청 페이지입니다.">
+<style>
+  :root{
+    --ink:#12211c;
+    --ink-soft:#455a53;
+    --muted:#6b807a;
+    --line:#e2eae6;
+    --bg:#f6faf8;
+    --card:#ffffff;
+    --brand:#17715a;
+    --brand-deep:#0e5442;
+    --brand-soft:#e7f4ef;
+    --accent:#d98324;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(18,33,28,.08);
+    --shadow-sm:0 2px 8px rgba(18,33,28,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic","Noto Sans KR",sans-serif;
+    line-height:1.65;
+    -webkit-text-size-adjust:100%;
+    word-break:keep-all;
+  }
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ── 상단 바 ── */
+  .topbar{
+    position:sticky;top:0;z-index:20;
+    background:rgba(246,250,248,.88);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:1.02rem;letter-spacing:-.02em}
+  .logo .dot{
+    width:26px;height:26px;border-radius:9px;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--brand),#2aa383);color:#fff;font-size:.82rem;font-weight:800;
+  }
+  .topbar a.cta-small{
+    background:var(--brand);color:#fff;font-weight:700;font-size:.9rem;
+    padding:9px 16px;border-radius:999px;white-space:nowrap;
+  }
+  .topbar a.cta-small:hover{background:var(--brand-deep);text-decoration:none}
+
+  /* ── 히어로 ── */
+  header.hero{
+    background:
+      radial-gradient(900px 420px at 85% -10%, rgba(42,163,131,.20), transparent 60%),
+      radial-gradient(700px 380px at 0% 0%, rgba(217,131,36,.12), transparent 55%),
+      linear-gradient(180deg,#fbfdfc 0%, var(--bg) 100%);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-inner{padding:64px 0 56px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--brand-soft);color:var(--brand-deep);
+    font-weight:700;font-size:.82rem;letter-spacing:.02em;
+    padding:7px 14px;border-radius:999px;margin-bottom:20px;
+  }
+  h1{
+    margin:0 0 16px;font-size:clamp(2.1rem,5.4vw,3.35rem);line-height:1.18;
+    letter-spacing:-.035em;font-weight:850;
+  }
+  h1 .hl{
+    background:linear-gradient(transparent 62%, rgba(42,163,131,.28) 62%);
+    padding:0 2px;
+  }
+  .lead{font-size:clamp(1rem,2.4vw,1.16rem);color:var(--ink-soft);max-width:640px;margin:0 0 30px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font:inherit;font-weight:750;cursor:pointer;border:0;border-radius:12px;
+    padding:15px 26px;transition:transform .15s ease, background .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--brand);color:#fff;box-shadow:0 8px 20px rgba(23,113,90,.25)}
+  .btn-primary:hover{background:var(--brand-deep);transform:translateY(-1px);text-decoration:none}
+  .btn-ghost{background:#fff;color:var(--brand-deep);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .btn-ghost:hover{background:#fff;border-color:#cfe0d8;text-decoration:none}
+  .hero-facts{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;color:var(--muted);font-size:.92rem}
+  .hero-facts span{display:inline-flex;align-items:center;gap:7px}
+  .tick{color:var(--brand);font-weight:900}
+
+  /* ── 섹션 ── */
+  section{padding:56px 0}
+  section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .section-head{margin-bottom:28px}
+  .section-head .kicker{color:var(--brand);font-weight:800;font-size:.82rem;letter-spacing:.14em}
+  h2{margin:6px 0 10px;font-size:clamp(1.42rem,3.2vw,1.85rem);letter-spacing:-.025em;font-weight:820}
+  .section-head p{margin:0;color:var(--ink-soft);max-width:660px}
+
+  /* ── 강사 소개 ── */
+  .teacher{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+  .avatar{
+    width:76px;height:76px;border-radius:22px;display:grid;place-items:center;
+    background:linear-gradient(140deg,#17715a,#37a888);color:#fff;
+    font-size:1.55rem;font-weight:850;letter-spacing:-.02em;box-shadow:0 8px 18px rgba(23,113,90,.22);
+  }
+  .teacher h3{margin:0 0 4px;font-size:1.18rem;letter-spacing:-.02em}
+  .teacher .role{color:var(--muted);font-size:.92rem;margin-bottom:10px}
+  .teacher p{margin:0 0 10px;color:var(--ink-soft)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .chip{background:var(--brand-soft);color:var(--brand-deep);font-size:.83rem;font-weight:700;padding:6px 12px;border-radius:999px}
+
+  /* ── 카드 그리드 ── */
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 22px;box-shadow:var(--shadow-sm);
+  }
+  .card .icon{
+    width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+    background:var(--brand-soft);font-size:1.2rem;margin-bottom:14px;
+  }
+  .card h3{margin:0 0 8px;font-size:1.03rem;letter-spacing:-.015em}
+  .card p{margin:0;color:var(--ink-soft);font-size:.94rem}
+
+  /* ── 커리큘럼 목록 ── */
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .steps li{
+    display:grid;grid-template-columns:38px 1fr;gap:14px;align-items:start;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm);
+  }
+  .steps .num{
+    width:30px;height:30px;border-radius:10px;background:var(--brand);color:#fff;
+    display:grid;place-items:center;font-weight:800;font-size:.88rem;margin-top:2px;
+  }
+  .steps strong{display:block;margin-bottom:2px;letter-spacing:-.01em}
+  .steps span.desc{color:var(--ink-soft);font-size:.93rem}
+
+  /* ── 예약 폼 ── */
+  #apply{padding-top:56px}
+  .form-card{
+    background:#fff;border:1px solid var(--line);border-radius:22px;
+    box-shadow:var(--shadow);padding:clamp(22px,4vw,38px);
+  }
+  .form-card .head{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:8px}
+  .badge-free{background:#fff4e6;color:#a35b00;font-weight:800;font-size:.8rem;padding:6px 12px;border-radius:999px;border:1px solid #ffe0b8}
+  .field{margin-top:18px}
+  .field label{display:block;font-weight:750;font-size:.94rem;margin-bottom:8px;letter-spacing:-.01em}
+  .field label .req{color:#c2410c;margin-left:2px}
+  .field .hint{display:block;font-weight:500;color:var(--muted);font-size:.84rem;margin-top:-4px;margin-bottom:8px}
+  input[type=text],input[type=tel],textarea,select{
+    width:100%;font:inherit;color:var(--ink);background:#fff;
+    border:1.5px solid #d8e4de;border-radius:12px;padding:13px 14px;
+    transition:border-color .15s ease, box-shadow .15s ease;appearance:none;
+  }
+  textarea{min-height:104px;resize:vertical}
+  select{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath fill='%23455a53' d='M1.4 1.4 7 7l5.6-5.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 4px rgba(23,113,90,.12)}
+  input.invalid,textarea.invalid,select.invalid{border-color:#dc2626;box-shadow:0 0 0 4px rgba(220,38,38,.10)}
+  .row{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+  .err{color:#b91c1c;font-size:.83rem;margin-top:6px;display:none}
+  .err.show{display:block}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:22px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:14px}
+  .consent input{margin-top:3px;width:17px;height:17px;accent-color:var(--brand);flex:0 0 auto}
+  .consent label{font-size:.88rem;color:var(--ink-soft);font-weight:600;margin:0}
+  .submit-row{margin-top:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .submit-row .btn-primary{flex:1 1 220px;padding:16px 24px;font-size:1.02rem}
+  .submit-note{color:var(--muted);font-size:.84rem;margin:12px 0 0}
+  .form-foot{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);color:var(--muted);font-size:.86rem}
+
+  /* ── 완료 화면 ── */
+  .done{display:none;text-align:center;padding:14px 4px 8px}
+  .done.show{display:block}
+  .done .mark{
+    width:64px;height:64px;border-radius:50%;background:var(--brand-soft);color:var(--brand);
+    display:grid;place-items:center;font-size:1.8rem;margin:0 auto 16px;
+  }
+  .done h3{margin:0 0 8px;font-size:1.28rem;letter-spacing:-.02em}
+  .done p{color:var(--ink-soft);margin:0 auto 8px;max-width:460px}
+  .done .summary{
+    text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:14px;
+    padding:16px 18px;margin:18px auto 0;max-width:460px;font-size:.92rem;
+  }
+  .done .summary div{display:flex;justify-content:space-between;gap:14px;padding:5px 0;border-bottom:1px dashed var(--line)}
+  .done .summary div:last-child{border-bottom:0}
+  .done .summary dt{color:var(--muted);flex:0 0 auto;margin:0}
+  .done .summary dd{margin:0;font-weight:650;text-align:right}
+
+  /* ── 안내 ── */
+  .note-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .note{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .note h4{margin:0 0 6px;font-size:.98rem}
+  .note p{margin:0;color:var(--ink-soft);font-size:.92rem}
+
+  /* ── 문의 ── */
+  .contact{
+    background:linear-gradient(150deg,var(--brand-deep),#1a7d63 70%);
+    color:#fff;border-radius:22px;padding:clamp(24px,4vw,38px);box-shadow:var(--shadow);
+  }
+  .contact h2{color:#fff;margin-top:0}
+  .contact p{color:rgba(255,255,255,.86);margin:0 0 20px;max-width:560px}
+  .contact-lines{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .contact-line{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:14px 16px}
+  .contact-line .ic{font-size:1.15rem}
+  .contact-line small{display:block;color:rgba(255,255,255,.7);font-size:.78rem;letter-spacing:.04em}
+  .contact-line a,.contact-line strong{color:#fff;font-weight:750;font-size:1rem;text-decoration:none}
+
+  footer{padding:34px 0 46px;color:var(--muted);font-size:.86rem;text-align:center}
+  footer p{margin:4px 0}
+
+  @media (max-width:640px){
+    .hero-inner{padding:44px 0 40px}
+    section{padding:42px 0}
+    .row{grid-template-columns:1fr}
+    .teacher{grid-template-columns:1fr;gap:16px}
+    .avatar{width:64px;height:64px;border-radius:18px;font-size:1.3rem}
+    .btn{padding:14px 20px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="logo"><span class="dot">AI</span> AI와 친해지기</div>
+    <a class="cta-small" href="#apply">신청하기</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">● 맞춤형 1:1 · 소그룹 AI 교육</span>
+    <h1>어렵게만 느껴지던 AI,<br><span class="hl">내 일상과 업무</span>에 바로 쓰는 법</h1>
+    <p class="lead">
+      ChatGPT·제미나이 같은 AI, 뉴스에서는 매일 나오는데 어디서부터 손대야 할지 막막하셨죠?
+      <strong>AI와 친해지기</strong>는 컴퓨터가 처음이신 분도 하루 만에 AI를 '내 비서'로 쓰실 수 있도록,
+      눈높이에 맞춰 차근차근 알려 드리는 실습 중심 교육입니다.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#apply">무료로 교육 신청하기 →</a>
+      <a class="btn btn-ghost" href="#teacher">강사·교육 소개 보기</a>
+    </div>
+    <div class="hero-facts">
+      <span><b class="tick">✓</b> 1:1 개인 교육 · 소그룹</span>
+      <span><b class="tick">✓</b> 스마트폰·노트북 모두 가능</span>
+      <span><b class="tick">✓</b> 일정은 협의해서 맞춤 진행</span>
+    </div>
+  </div>
+</header>
+
+<section id="teacher">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">강사 소개</div>
+      <h2>가르치는 사람, 이용식</h2>
+      <p>어려운 기술 용어 대신 생활 속 말로 설명하는 IT 전문 강사입니다.</p>
+    </div>
+    <div class="card">
+      <div class="teacher">
+        <div class="avatar">이용식</div>
+        <div>
+          <h3>이용식 <span style="font-weight:600;color:var(--muted);font-size:.9rem">· IT 전문 강사</span></h3>
+          <div class="role">기업·기관 AI 활용 교육 · AI 에이전트 실무 강의</div>
+          <p>
+            오랫동안 기업과 기관에서 IT 기술 교육을 해 왔습니다. 잘 아는 사람에게는 쉬운 이야기지만,
+            처음 접하는 분께는 낯선 말투가 되기 쉽다는 걸 현장에서 배웠습니다.
+            그래서 <strong>수강생 한 분의 실제 업무와 생활</strong>을 출발점으로 삼아, 그 자리에서 바로 써먹을 수 있는 것만 가르칩니다.
+          </p>
+          <p>
+            "AI가 뭔가요?"라는 질문에서 시작해도 괜찮습니다. 필요한 것은 재능이 아니라
+            <strong>한 번 같이 해 보는 시간</strong>입니다.
+          </p>
+          <div class="chips">
+            <span class="chip">눈높이 설명</span>
+            <span class="chip">실습 중심</span>
+            <span class="chip">업무 맞춤</span>
+            <span class="chip">질문 환영</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">교육 특징</div>
+      <h2>이런 점이 다릅니다</h2>
+      <p>유행하는 기능을 나열하지 않고, 수강생의 하루에 실제로 쓰이는 것부터 익힙니다.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="icon">🌱</div>
+        <h3>ChatGPT 기초부터</h3>
+        <p>가입과 첫 질문에서 시작해, 원하는 답을 받아내는 질문법(프롬프트)까지 순서대로 익힙니다.</p>
+      </div>
+      <div class="card">
+        <div class="icon">💼</div>
+        <h3>실생활·업무 맞춤 활용</h3>
+        <p>보고서·이메일·공지문 작성, 요약, 아이디어 정리, 자료 조사 등 본인 업무에 붙여 봅니다.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>일상 비서로 만들기</h3>
+        <p>일정·가계부·여행 계획·건강 관리까지, AI를 매일 부르는 비서처럼 쓰는 방법을 배웁니다.</p>
+      </div>
+      <div class="card">
+        <div class="icon">📱</div>
+        <h3>스마트폰으로도 충분</h3>
+        <p>컴퓨터가 익숙하지 않아도 됩니다. 손에 든 휴대폰만으로 따라오실 수 있게 진행합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="curriculum">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">교육 내용</div>
+      <h2>이렇게 진행합니다</h2>
+      <p>정해진 교재를 그대로 읽지 않습니다. 시작 전에 원하시는 것을 여쭙고 그에 맞춰 순서를 바꿉니다.</p>
+    </div>
+    <ol class="steps">
+      <li><span class="num">1</span><div><strong>AI와 인사하기</strong><span class="desc">AI가 무엇이고 무엇을 잘하는지, 가입과 첫 대화까지 — 두려움부터 없앱니다.</span></div></li>
+      <li><span class="num">2</span><div><strong>질문 잘 하는 법</strong><span class="desc">같은 AI라도 질문에 따라 답이 달라집니다. 원하는 답을 끌어내는 질문 틀을 익힙니다.</span></div></li>
+      <li><span class="num">3</span><div><strong>내 업무에 붙이기</strong><span class="desc">글쓰기, 요약, 번역, 아이디어 회의 — 수강생의 실제 업무 자료로 직접 실습합니다.</span></div></li>
+      <li><span class="num">4</span><div><strong>일상 비서로 쓰기</strong><span class="desc">일정 정리, 여행 계획, 건강·가계 관리, 문서·이미지 만들기까지 생활 속 활용.</span></div></li>
+      <li><span class="num">5</span><div><strong>나만의 활용법 정리</strong><span class="desc">교육이 끝난 뒤에도 혼자 쓸 수 있도록, 자주 쓰는 질문과 요령을 정리해 드립니다.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="alt" id="apply">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">교육 신청</div>
+      <h2>신청서 작성하기</h2>
+      <p>아래 내용을 적어 주시면, 일정을 확인한 뒤 <strong>하루 안에</strong> 연락드립니다. 신청은 무료입니다.</p>
+    </div>
+
+    <div class="form-card">
+      <div id="formArea">
+        <div class="head">
+          <strong style="font-size:1.06rem;letter-spacing:-.02em">AI와 친해지기 · 교육 신청</strong>
+          <span class="badge-free">신청 무료</span>
+        </div>
+
+        <form id="applyForm" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="name">성함 <span class="req">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="예: 홍길동">
+              <div class="err" id="err-name">성함을 적어 주세요.</div>
+            </div>
+            <div class="field">
+              <label for="phone">연락처 <span class="req">*</span></label>
+              <span class="hint">연락 가능한 휴대전화 번호</span>
+              <input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="010-1234-5678">
+              <div class="err" id="err-phone">연락처를 정확히 적어 주세요. (숫자 9~11자리)</div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="when">희망 교육 일정 및 시간대 <span class="req">*</span></label>
+            <span class="hint">예: 평일 저녁 7시 이후 / 토요일 오전 / 11월 25일(화) 오후 2시경</span>
+            <input type="text" id="when" name="when" placeholder="편하게 적어 주세요">
+            <div class="err" id="err-when">희망하시는 일정이나 시간대를 적어 주세요.</div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="people">참여 인원 <span class="req">*</span></label>
+              <select id="people" name="people">
+                <option value="">선택해 주세요</option>
+                <option value="1명 (1:1 개인 교육)">1명 (1:1 개인 교육)</option>
+                <option value="2명">2명</option>
+                <option value="3~5명 (소그룹)">3~5명 (소그룹)</option>
+                <option value="6명 이상 (단체)">6명 이상 (단체)</option>
+              </select>
+              <div class="err" id="err-people">참여 인원을 선택해 주세요.</div>
+            </div>
+            <div class="field">
+              <label for="need">배우고 싶은 내용</label>
+              <span class="hint">지금 AI를 어느 정도 쓰시는지도 알려 주시면 좋습니다</span>
+              <input type="text" id="need" name="need" placeholder="예: 처음 써 봄 / 보고서 작성에 쓰고 싶음">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="memo">사전 질문 / 하고 싶은 말씀</label>
+            <span class="hint">궁금한 점, 교육 장소나 방식에 대한 요청을 자유롭게 적어 주세요.</span>
+            <textarea id="memo" name="memo" placeholder="예: 컴퓨터가 익숙하지 않습니다. 노트북 지참 가능합니다."></textarea>
+          </div>
+
+          <div class="consent">
+            <input type="checkbox" id="agree" name="agree">
+            <label for="agree">신청 접수와 교육 일정 안내를 위해 이름·연락처를 수집하는 데 동의합니다. (안내 목적으로만 사용하고, 교육 종료 후 폐기합니다.)</label>
+          </div>
+          <div class="err" id="err-agree" style="margin-top:8px">동의에 체크해 주세요.</div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn btn-primary" id="submitBtn">신청서 보내기</button>
+            <a class="btn btn-ghost" id="directLink" href="https://docs.google.com/forms/d/e/1FAIpQLSfgG8fWdQroafAfmBOM3LzlnbUgMlh7hNn8-l7efDWmUUivdw/viewform" target="_blank" rel="noopener">구글 신청서로 바로 열기</a>
+          </div>
+          <p class="submit-note">보내 주신 내용은 이용식 강사의 구글 신청서로 접수되어, 접수 즉시 알림을 받고 확인 후 연락드립니다.</p>
+        </form>
+
+        <div class="form-foot">
+          ⓘ 일정이 맞지 않거나 급하신 경우, 아래 연락처로 전화 주셔도 됩니다.
+        </div>
+      </div>
+
+      <div class="done" id="doneArea" role="status" aria-live="polite">
+        <div class="mark">✓</div>
+        <h3>신청이 접수되었습니다</h3>
+        <p>적어 주신 내용으로 접수했습니다. 일정을 확인한 뒤 <strong>하루 안에</strong> 연락드리겠습니다. 감사합니다.</p>
+        <dl class="summary" id="summary"></dl>
+        <p style="margin-top:18px;font-size:.88rem;color:var(--muted)">
+          접수가 되지 않았다는 안내를 받으셨거나 화면이 멈췄다면,
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgG8fWdQroafAfmBOM3LzlnbUgMlh7hNn8-l7efDWmUUivdw/viewform" target="_blank" rel="noopener">구글 신청서</a>로 다시 한 번 보내 주세요.
+        </p>
+        <button type="button" class="btn btn-ghost" id="againBtn" style="margin-top:14px">다른 분 신청서 작성하기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="guide">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">안내</div>
+      <h2>알아 두시면 좋은 것</h2>
+    </div>
+    <div class="note-grid">
+      <div class="note">
+        <h4>진행 방식</h4>
+        <p>1:1 개인 교육을 기본으로 하며, 가족·동료와 함께하는 소그룹(2~5명)도 가능합니다. 단체는 별도로 협의합니다.</p>
+      </div>
+      <div class="note">
+        <h4>준비물</h4>
+        <p>AI를 쓸 수 있는 노트북이나 스마트폰이면 충분합니다. 계정 만들기부터 함께 하니 미리 준비하지 않으셔도 됩니다.</p>
+      </div>
+      <div class="note">
+        <h4>일정·장소</h4>
+        <p>신청서에 적어 주신 희망 일정을 기준으로 협의해 확정합니다. 대면·온라인 모두 가능합니다.</p>
+      </div>
+      <div class="note">
+        <h4>비용</h4>
+        <p>교육 신청과 상담은 무료입니다. 실제 교육 진행 시의 비용은 인원과 시간에 따라 협의해 미리 안내드립니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <h2>문의</h2>
+      <p>신청서를 쓰기 어려우시면 전화로 편하게 말씀해 주세요. 궁금한 점은 언제든 환영합니다.</p>
+      <div class="contact-lines">
+        <div class="contact-line">
+          <span class="ic">📞</span>
+          <div><small>전화 · 문자</small><a href="tel:01030889191">010-3088-9191</a></div>
+        </div>
+        <div class="contact-line">
+          <span class="ic">✉️</span>
+          <div><small>이메일</small><a href="mailto:jesuswithme@gmail.com">jesuswithme@gmail.com</a></div>
+        </div>
+        <div class="contact-line">
+          <span class="ic">👤</span>
+          <div><small>강사</small><strong>이용식 · IT 전문 강사</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>AI와 친해지기</strong> · 맞춤형 1:1 · 소그룹 AI 교육</p>
+    <p>강사 이용식 · 010-3088-9191 · jesuswithme@gmail.com</p>
+  </div>
+</footer>
+
+<!-- 구글 폼 제출용 숨은 프레임 (페이지를 떠나지 않고 접수) -->
+<iframe name="gform_target" id="gform_target" style="display:none" title="신청 접수 처리"></iframe>
+
+<script>
+(function () {
+  var FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfgG8fWdQroafAfmBOM3LzlnbUgMlh7hNn8-l7efDWmUUivdw/formResponse";
+  // 구글 신청서 문항 ID (문항 순서: 성함 / 연락처 / 희망일정 / 인원 / 배우고 싶은 내용 + 메모)
+  var ENTRY = {
+    name:  "entry.1113578858",   // 성함
+    phone: "entry.182339144",    // 연락처
+    when:  "entry.1106496393",   // 희망 교육 일정 및 시간대
+    people:"entry.1794188126",   // 참여 인원 (드롭다운)
+    need:  "entry.1480312824"    // 현재 AI 활용 수준 및 배우고 싶은 내용
+  };
+
+  var form = document.getElementById("applyForm");
+  var doneArea = document.getElementById("doneArea");
+  var formArea = document.getElementById("formArea");
+  var summary = document.getElementById("summary");
+  var iframe = document.getElementById("gform_target");
+
+  function clean(v) { return (v || "").trim(); }
+  function setErr(id, on) {
+    var el = document.getElementById(id);
+    var field = document.getElementById(id.replace("err-", ""));
+    if (el) el.classList.toggle("show", !!on);
+    if (field) field.classList.toggle("invalid", !!on);
+  }
+
+  function validate() {
+    var ok = true;
+    var name = clean(document.getElementById("name").value);
+    var phone = clean(document.getElementById("phone").value);
+    var when = clean(document.getElementById("when").value);
+    var people = document.getElementById("people").value;
+    var agree = document.getElementById("agree").checked;
+
+    setErr("err-name", !name); if (!name) ok = false;
+    var digits = phone.replace(/[^0-9]/g, "");
+    var phoneOk = digits.length >= 9 && digits.length <= 11;
+    setErr("err-phone", !phoneOk); if (!phoneOk) ok = false;
+    setErr("err-when", !when); if (!when) ok = false;
+    setErr("err-people", !people); if (!people) ok = false;
+    setErr("err-agree", !agree); if (!agree) ok = false;
+    return ok;
+  }
+
+  function buildPrefillUrl() {
+    var p = new URLSearchParams();
+    p.set("usp", "pp_url");
+    p.set(ENTRY.name, clean(document.getElementById("name").value));
+    p.set(ENTRY.phone, clean(document.getElementById("phone").value));
+    p.set(ENTRY.when, clean(document.getElementById("when").value));
+    p.set(ENTRY.people, document.getElementById("people").value);
+    p.set(ENTRY.need, clean(document.getElementById("need").value));
+    return FORM_ACTION.replace("/formResponse", "/viewform") + "?" + p.toString();
+  }
+
+  function showDone() {
+    var rows = [
+      ["성함", clean(document.getElementById("name").value)],
+      ["연락처", clean(document.getElementById("phone").value)],
+      ["희망 일정", clean(document.getElementById("when").value)],
+      ["참여 인원", document.getElementById("people").value]
+    ];
+    var need = clean(document.getElementById("need").value);
+    var memo = clean(document.getElementById("memo").value);
+    if (need) rows.push(["배우고 싶은 내용", need]);
+    if (memo) rows.push(["남기신 말씀", memo]);
+
+    summary.innerHTML = rows.map(function (r) {
+      return "<div><dt>" + r[0] + "</dt><dd></dd></div>";
+    }).join("");
+    var dds = summary.querySelectorAll("dd");
+    rows.forEach(function (r, i) {
+      dds[i].textContent = r[1].replace(/[<>]/g, "");   // 값은 텍스트로만 삽입
+    });
+
+    formArea.style.display = "none";
+    doneArea.classList.add("show");
+    window.scrollTo({ top: doneArea.getBoundingClientRect().top + window.pageYOffset - 90, behavior: "smooth" });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!validate()) {
+      var firstBad = form.querySelector(".invalid");
+      if (firstBad && firstBad.focus) firstBad.focus();
+      return;
+    }
+
+    var btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+    btn.textContent = "보내는 중…";
+
+    // 1) 숨은 프레임으로 구글 신청서에 실제 접수
+    var f = document.createElement("form");
+    f.method = "POST";
+    f.action = FORM_ACTION;
+    f.target = "gform_target";
+    f.style.display = "none";
+
+    function add(name, value) {
+      var i = document.createElement("input");
+      i.type = "hidden"; i.name = name; i.value = value;
+      f.appendChild(i);
+    }
+    var memo = clean(document.getElementById("memo").value);
+    var need = clean(document.getElementById("need").value);
+    if (memo) { need = need ? need + " / " + memo : memo; }
+
+    add(ENTRY.name, clean(document.getElementById("name").value));
+    add(ENTRY.phone, clean(document.getElementById("phone").value));
+    add(ENTRY.when, clean(document.getElementById("when").value));
+    add(ENTRY.people, document.getElementById("people").value);
+    if (need) add(ENTRY.need, need);
+
+    document.body.appendChild(f);
+    f.submit();
+
+    // 2) 접수 화면 표시 (프레임 응답은 다른 도메인이라 읽을 수 없으므로 잠시 뒤 전환)
+    setTimeout(function () {
+      try { document.body.removeChild(f); } catch (err) {}
+      btn.disabled = false;
+      btn.textContent = "신청서 보내기";
+      showDone();
+    }, 700);
+  });
+
+  // "구글 신청서로 바로 열기": 이미 적은 내용이 있으면 그 값이 채워진 채로 열린다.
+  var direct = document.getElementById("directLink");
+  direct.addEventListener("click", function () {
+    var filled = ["name", "phone", "when", "need"].some(function (id) {
+      return clean(document.getElementById(id).value) !== "";
+    });
+    if (filled) direct.href = buildPrefillUrl();
+  });
+
+  document.getElementById("againBtn").addEventListener("click", function () {
+    form.reset();
+    doneArea.classList.remove("show");
+    formArea.style.display = "";
+    window.scrollTo({ top: document.getElementById("apply").getBoundingClientRect().top + window.pageYOffset - 70, behavior: "smooth" });
+  });
+
+  // 입력 중 오류 표시 정리
+  ["name", "phone", "when", "people"].forEach(function (id) {
+    var el = document.getElementById(id);
+    el.addEventListener("input", function () { setErr("err-" + id, false); });
+    el.addEventListener("change", function () { setErr("err-" + id, false); });
+  });
+  document.getElementById("agree").addEventListener("change", function () { setErr("err-agree", false); });
+})();
+</script>
+</body>
+</html>
