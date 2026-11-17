@@ -131,6 +131,18 @@
   }
   .dday span.dim{font-weight:500;color:var(--muted)}
 
+  /* 100일 인장 – 넓은 화면 장식 */
+  .seal{
+    position:absolute;right:34px;bottom:30px;width:124px;height:124px;border-radius:50%;
+    display:none;place-content:center;text-align:center;
+    background:radial-gradient(circle at 34% 28%, #fff 0%, rgba(255,255,255,.42) 70%);
+    border:1px solid rgba(196,88,107,.26);
+    box-shadow:inset 0 0 0 6px rgba(255,255,255,.55), 0 10px 24px -18px rgba(150,80,70,.6);
+  }
+  .seal b{display:block;font-family:var(--serif);font-size:40px;line-height:1;color:var(--rose-deep);letter-spacing:-.02em}
+  .seal small{display:block;margin-top:6px;font-size:9.5px;letter-spacing:.32em;color:var(--muted);font-weight:700}
+  @media (min-width:900px){ .seal{display:grid} }
+
   /* ── 레이아웃 ── */
   .grid{display:grid;gap:16px}
 
@@ -271,6 +283,13 @@
   .btn.sm{font-size:13.5px;padding:11px 14px;border-radius:12px}
 
   .hint{font-size:12.5px;color:var(--muted);margin:10px 1px 0;line-height:1.6;word-break:keep-all}
+  .setup-warn{
+    display:none;margin:12px 0 0;padding:11px 13px;border-radius:13px;
+    background:#fdf6e9;border:1px solid #f0e0c2;color:#8a6626;
+    font-size:12.5px;font-weight:600;line-height:1.6;word-break:keep-all;
+  }
+  .setup-warn.show{display:block}
+  .setup-warn b{color:#7a5518}
 
   /* ── 설정 패널 ── */
   details.settings{
@@ -380,6 +399,7 @@
       </div>
     </div>
     <div class="dday" id="dday"><span class="dim">행사까지</span> <b>계산 중…</b></div>
+    <div class="seal" aria-hidden="true"><b>100</b><small>DAYS</small></div>
   </header>
 
   <div class="grid">
@@ -514,6 +534,7 @@
           <button type="button" class="btn ghost" id="copyBtn">📋 보고 문구 복사</button>
         </div>
         <p class="hint" id="sendHint">브라우저 보안 정책상 전송 성공 여부는 화면에 표시되지 않습니다. 보내신 뒤 <b>#pickle</b> 채널에서 확인해 주세요.</p>
+        <div class="setup-warn" id="setupWarn">아직 슬랙 연결이 안 되어 있습니다. 아래 <b>⚙️ 슬랙(#pickle) 연결 설정</b>을 한 번만 열어 Webhook 주소를 붙여넣어 주세요.</div>
 
         <!-- 슬랙 연결 설정 -->
         <details class="settings" id="settings">
@@ -788,6 +809,8 @@
       whDot.classList.remove('on');
       whStateText.textContent = '저장된 주소가 없습니다.';
     }
+    var warn = $('setupWarn');
+    if (warn) warn.classList.toggle('show', !u);
   }
 
   whInput.value = getWebhook();
@@ -951,20 +974,36 @@
     sendBtn.disabled = true;
     sendBtn.textContent = '📤 전송 중…';
 
-    fetch(url, {
+    var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+    var timedOut = false;
+    var timer = setTimeout(function(){
+      timedOut = true;
+      if (ctrl) { try { ctrl.abort(); } catch(e){} }
+    }, 12000);
+
+    var opts = {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
       body: JSON.stringify({ text: message })
-    }).then(function(){
+    };
+    if (ctrl) opts.signal = ctrl.signal;
+
+    fetch(url, opts).then(function(){
+      clearTimeout(timer);
       addHist('slack');
       toast('✅ 슬랙 #pickle로 보냈습니다. 채널에서 확인해 주세요.', 'ok');
       detail.value = '';
       count.textContent = '0';
       updatePreview();
-    }).catch(function(err){
+    }).catch(function(){
+      clearTimeout(timer);
       addHist('fail');
-      toast('전송하지 못했습니다. 네트워크와 Webhook 주소를 확인해 주세요.', 'err');
+      if (timedOut) {
+        toast('응답이 없어 전송을 중단했습니다. 그래도 #pickle에 도착했을 수 있으니 채널을 확인해 주세요.', 'err');
+      } else {
+        toast('전송하지 못했습니다. 네트워크와 Webhook 주소를 확인해 주세요.', 'err');
+      }
     }).then(function(){
       sending = false;
       sendBtn.disabled = false;
