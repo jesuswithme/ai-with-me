@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🎀 도아 백일 감사예배 &amp; 축하 잔치 · 준비 체크리스트</title>
+<meta name="description" content="2026년 12월 30일(수) 쉐이드트리, 도아 백일 감사예배 &amp; 축하 잔치 준비 체크리스트와 현장 보고">
+<meta name="theme-color" content="#fdf7f2">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://jesuswithme.github.io/ai-with-me/doa-100/">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="도아 백일잔치 준비">
+<meta property="og:title" content="🎀 도아 백일 감사예배 &amp; 축하 잔치">
+<meta property="og:description" content="2026년 12월 30일(수) · 10:00 준비 / 12:00~15:00 본 행사 · 쉐이드트리 Shade Tree">
+<meta property="og:url" content="https://jesuswithme.github.io/ai-with-me/doa-100/">
+<meta name="twitter:card" content="summary">
+
+<style>
+  :root{
+    --bg:#fdf8f4;
+    --ink:#392d2a;
+    --ink-soft:#5a4a45;
+    --muted:#8f7c75;
+    --line:#f0e1d9;
+    --line-strong:#e6d2c8;
+    --card:#fffdfb;
+    --rose:#c4586b;
+    --rose-deep:#a8435a;
+    --rose-soft:#fbe9ec;
+    --peach:#f3c3ad;
+    --gold:#c39a63;
+    --ok:#3c7a5b;
+    --warn:#b4712f;
+    --shadow:0 10px 30px -18px rgba(120,70,60,.45), 0 2px 6px -3px rgba(120,70,60,.18);
+    --serif:'Noto Serif KR','AppleMyungjo','Nanum Myeongjo','Batang','바탕',serif;
+    --sans:'Pretendard','Apple SD Gothic Neo','Malgun Gothic','맑은 고딕','Noto Sans KR',system-ui,-apple-system,sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.68;
+    letter-spacing:-.012em;
+    background:
+      radial-gradient(900px 520px at 8% -12%, #ffe7ea 0%, rgba(255,231,234,0) 62%),
+      radial-gradient(820px 480px at 102% -4%, #fdf0dc 0%, rgba(253,240,220,0) 58%),
+      linear-gradient(180deg,#fdf9f5 0%,#fdf5f2 55%,#fbf1ec 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:20px 16px 72px}
+
+  /* ── 공통 카드 ── */
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding:22px 20px;
+  }
+  .card + .card{margin-top:16px}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:4px}
+  .card-title{
+    font-family:var(--serif);
+    font-size:19px;
+    font-weight:700;
+    letter-spacing:-.02em;
+    margin:0;
+  }
+  .card-sub{margin:2px 0 16px;font-size:13px;color:var(--muted)}
+
+  /* ── 상단 행사 카드 ── */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(520px 260px at 88% -30%, rgba(255,255,255,.85), transparent 70%),
+      linear-gradient(150deg,#fdf1ee 0%,#fbe6e5 46%,#f9ece0 100%);
+    border:1px solid #f2dcd6;
+    border-radius:26px;
+    box-shadow:0 18px 44px -26px rgba(150,80,70,.55), 0 2px 8px -4px rgba(150,80,70,.2);
+    padding:26px 22px 22px;
+    margin-bottom:16px;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-70px;top:-70px;width:210px;height:210px;border-radius:50%;
+    background:radial-gradient(circle,rgba(196,88,107,.12),transparent 68%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--rose-deep);font-weight:700;
+    background:rgba(255,255,255,.72);
+    border:1px solid rgba(196,88,107,.2);
+    padding:4px 11px;border-radius:999px;
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-size:clamp(23px,5.6vw,32px);
+    line-height:1.36;
+    letter-spacing:-.03em;
+    margin:14px 0 18px;
+    color:#3a2a26;
+    word-break:keep-all;
+  }
+  .hero h1 .accent{color:var(--rose-deep)}
+  .hero-meta{display:grid;gap:11px}
+  .mrow{display:flex;gap:12px;align-items:flex-start}
+  .mrow .ico{
+    flex:0 0 auto;width:34px;height:34px;border-radius:11px;
+    display:grid;place-items:center;font-size:16px;
+    background:rgba(255,255,255,.8);
+    border:1px solid rgba(196,88,107,.16);
+  }
+  .mrow b{display:block;font-size:15px;font-weight:700;letter-spacing:-.02em}
+  .mrow small{display:block;font-size:13px;color:var(--ink-soft);opacity:.82;margin-top:1px}
+  .dday{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:18px;padding:7px 14px;border-radius:999px;
+    background:rgba(255,255,255,.82);
+    border:1px solid rgba(196,88,107,.22);
+    font-size:13px;font-weight:700;color:var(--rose-deep);
+  }
+  .dday span.dim{font-weight:500;color:var(--muted)}
+
+  /* ── 레이아웃 ── */
+  .grid{display:grid;gap:16px}
+
+  /* ── 체크리스트 ── */
+  .progress-line{display:flex;align-items:center;gap:10px;margin:0 0 16px}
+  .bar{flex:1;height:8px;border-radius:99px;background:#f4e6e0;overflow:hidden}
+  .bar > i{display:block;height:100%;width:0%;border-radius:99px;
+    background:linear-gradient(90deg,#e7a3a4,#c4586b);transition:width .35s ease}
+  .progress-num{font-size:13px;font-weight:700;color:var(--rose-deep);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+  .checklist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .check{
+    display:flex;gap:12px;align-items:flex-start;
+    padding:13px 14px;border-radius:15px;
+    border:1px solid var(--line);background:#fffefd;
+    transition:background .2s ease,border-color .2s ease,transform .12s ease;
+  }
+  .check:active{transform:scale(.995)}
+  .check input{position:absolute;opacity:0;width:0;height:0}
+  .box{
+    flex:0 0 auto;width:24px;height:24px;border-radius:8px;
+    border:1.6px solid var(--line-strong);background:#fff;
+    display:grid;place-items:center;margin-top:1px;
+    transition:all .18s ease;
+  }
+  .box svg{width:14px;height:14px;stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;
+    opacity:0;transform:scale(.6);transition:all .18s ease}
+  .check-text{flex:1;min-width:0}
+  .check-text b{display:block;font-size:15px;font-weight:600;line-height:1.5;word-break:keep-all}
+  .check-text small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;word-break:keep-all}
+  .check input:checked + .box{background:var(--rose);border-color:var(--rose)}
+  .check input:checked + .box svg{opacity:1;transform:scale(1)}
+  .check input:checked ~ .check-text b{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1.4px;text-decoration-color:rgba(196,88,107,.5)}
+  .check input:focus-visible + .box{outline:2px solid rgba(196,88,107,.45);outline-offset:3px}
+  .check.done{background:#fdf7f6;border-color:#f3dcd8}
+
+  .all-done{
+    margin-top:14px;padding:12px 14px;border-radius:14px;
+    background:#f2f7f3;border:1px solid #d5e7da;color:#2f6b4c;
+    font-size:13.5px;font-weight:600;display:none;
+  }
+  .all-done.show{display:block}
+
+  .tiny-btn{
+    appearance:none;border:1px solid var(--line-strong);background:#fff;color:var(--muted);
+    font-family:inherit;font-size:12.5px;font-weight:600;
+    padding:5px 11px;border-radius:999px;cursor:pointer;
+    transition:all .16s ease;
+  }
+  .tiny-btn:hover{color:var(--rose-deep);border-color:#e5c3c8;background:#fffaf9}
+  .tiny-btn:active{transform:translateY(1px)}
+
+  /* ── 보고 폼 ── */
+  .field{margin-bottom:18px}
+  .field:last-child{margin-bottom:0}
+  .label{
+    display:flex;align-items:center;gap:7px;
+    font-size:13.5px;font-weight:700;color:var(--ink-soft);
+    margin-bottom:8px;letter-spacing:-.01em;
+  }
+  .label .num{
+    display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;
+    background:var(--rose-soft);color:var(--rose-deep);font-size:11px;font-weight:800;
+  }
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{
+    appearance:none;cursor:pointer;font-family:inherit;
+    font-size:13.5px;font-weight:600;letter-spacing:-.01em;
+    padding:9px 14px;border-radius:12px;
+    border:1px solid var(--line-strong);background:#fff;color:var(--ink-soft);
+    transition:all .16s ease;min-height:40px;
+  }
+  .chip:hover{border-color:#dcbfc4;background:#fffbfa}
+  .chip:active{transform:translateY(1px)}
+  .chip[aria-pressed="true"]{
+    background:var(--rose);border-color:var(--rose);color:#fff;
+    box-shadow:0 6px 14px -8px rgba(196,88,107,.8);
+  }
+  .chip.type[aria-pressed="true"]{background:#fff;color:var(--rose-deep);border-color:var(--rose);}
+  .chip.type[aria-pressed="true"]::after{content:"";}
+
+  .quick{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}
+  .quick button{
+    appearance:none;cursor:pointer;font-family:inherit;
+    font-size:12.5px;font-weight:600;color:var(--rose-deep);
+    background:var(--rose-soft);border:1px solid rgba(196,88,107,.18);
+    padding:6px 11px;border-radius:999px;transition:all .16s ease;
+  }
+  .quick button:hover{background:#f9dee2;border-color:rgba(196,88,107,.3)}
+  .quick button:active{transform:translateY(1px)}
+
+  textarea,input[type="text"],input[type="password"]{
+    width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+    background:#fffefd;border:1px solid var(--line-strong);border-radius:14px;
+    padding:13px 14px;line-height:1.6;letter-spacing:-.01em;
+    -webkit-appearance:none;appearance:none;
+    transition:border-color .16s ease,box-shadow .16s ease;
+  }
+  textarea{min-height:104px;resize:vertical}
+  textarea::placeholder,input::placeholder{color:#bda9a1}
+  textarea:focus,input:focus{outline:none;border-color:#dca6ae;box-shadow:0 0 0 3.5px rgba(196,88,107,.11);}
+  .counter{text-align:right;font-size:11.5px;color:#bda9a1;margin-top:5px;font-variant-numeric:tabular-nums}
+
+  .preview{
+    margin-top:2px;padding:12px 14px;border-radius:14px;
+    background:#fbf6f3;border:1px dashed #e8d5cc;
+    font-size:12.5px;line-height:1.66;color:var(--ink-soft);
+    white-space:pre-wrap;word-break:break-word;
+  }
+  .preview .ph{color:#b3a29a}
+
+  .actions{display:grid;gap:9px;grid-template-columns:1fr}
+  .btn{
+    appearance:none;font-family:inherit;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    font-size:15.5px;font-weight:700;letter-spacing:-.02em;
+    padding:15px 18px;border-radius:15px;border:1px solid transparent;
+    transition:all .16s ease;
+  }
+  .btn.primary{
+    background:linear-gradient(180deg,#cf6577,#bd4e64);
+    color:#fff;
+    box-shadow:0 10px 22px -12px rgba(180,70,90,.9), inset 0 1px 0 rgba(255,255,255,.18);
+  }
+  .btn.primary:hover{filter:brightness(1.04)}
+  .btn.primary:active{transform:translateY(1px);box-shadow:0 5px 14px -10px rgba(180,70,90,.9)}
+  .btn.primary[disabled]{opacity:.62;cursor:progress}
+  .btn.ghost{background:#fff;border-color:var(--line-strong);color:var(--ink-soft)}
+  .btn.ghost:hover{border-color:#dcbfc4;background:#fffbfa}
+  .btn.ghost:active{transform:translateY(1px)}
+  .btn.sm{font-size:13.5px;padding:11px 14px;border-radius:12px}
+
+  .hint{font-size:12.5px;color:var(--muted);margin:10px 1px 0;line-height:1.6;word-break:keep-all}
+
+  /* ── 설정 패널 ── */
+  details.settings{
+    margin-top:18px;border:1px solid var(--line);border-radius:16px;
+    background:#fdfaf8;overflow:hidden;
+  }
+  details.settings > summary{
+    cursor:pointer;list-style:none;
+    padding:13px 15px;font-size:13.5px;font-weight:700;color:var(--ink-soft);
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    user-select:none;
+  }
+  details.settings > summary::-webkit-details-marker{display:none}
+  details.settings > summary::after{
+    content:"▾";font-size:12px;color:var(--muted);transition:transform .2s ease;
+  }
+  details.settings[open] > summary::after{transform:rotate(180deg)}
+  details.settings[open] > summary{border-bottom:1px solid var(--line)}
+  .settings-body{padding:15px}
+  .settings-body .row{display:flex;gap:8px;margin-top:9px}
+  .settings-body .row .btn{flex:1}
+  .wh-state{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);margin-top:9px}
+  .dot{width:7px;height:7px;border-radius:50%;background:#d9c7c0;display:inline-block}
+  .dot.on{background:var(--ok);box-shadow:0 0 0 3px rgba(60,122,91,.14)}
+  .wh-state.on{color:var(--ok);font-weight:600}
+
+  /* ── 전송 기록 ── */
+  .history{margin-top:20px;border-top:1px dashed var(--line-strong);padding-top:16px}
+  .history-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+  .history-head h3{margin:0;font-size:13px;font-weight:700;color:var(--ink-soft);letter-spacing:.01em}
+  .hist-list{list-style:none;margin:0;padding:0;display:grid;gap:7px;max-height:320px;overflow:auto}
+  .hist{
+    display:flex;gap:10px;align-items:flex-start;
+    padding:10px 12px;border-radius:12px;background:#fdfaf8;border:1px solid #f2e6e0;
+    font-size:12.5px;line-height:1.55;
+  }
+  .badge{
+    flex:0 0 auto;font-size:10.5px;font-weight:800;letter-spacing:.02em;
+    padding:3px 7px;border-radius:6px;background:#eef4ef;color:var(--ok);
+    margin-top:1px;
+  }
+  .badge.copy{background:#f3eef8;color:#6f5a8a}
+  .badge.fail{background:#fbeceb;color:#b04a44}
+  .hist-body{flex:1;min-width:0}
+  .hist-body .who{font-weight:700;color:var(--ink-soft)}
+  .hist-body .when{color:#b3a29a;font-size:11.5px;margin-left:6px;font-variant-numeric:tabular-nums}
+  .hist-body .what{color:var(--ink-soft);opacity:.86;margin-top:2px;word-break:break-word;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .empty{font-size:12.5px;color:#bda9a1;padding:6px 2px}
+
+  /* ── 토스트 ── */
+  #toast{
+    position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom));
+    transform:translate(-50%,16px);
+    max-width:min(92vw,420px);
+    background:#3a2c29;color:#fff;font-size:13.5px;font-weight:600;line-height:1.5;
+    padding:12px 17px;border-radius:14px;
+    box-shadow:0 14px 34px -14px rgba(0,0,0,.6);
+    opacity:0;pointer-events:none;transition:all .26s ease;z-index:50;
+    text-align:center;word-break:keep-all;
+  }
+  #toast.show{opacity:1;transform:translate(-50%,0)}
+  #toast.ok{background:#2f6b4c}
+  #toast.err{background:#9c4038}
+
+  .foot{
+    margin-top:22px;text-align:center;font-size:12px;color:#b3a29a;line-height:1.8;
+  }
+  .foot b{color:var(--muted)}
+
+  /* ── 데스크톱 ── */
+  @media (min-width:900px){
+    .wrap{padding:34px 24px 80px}
+    .grid{grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);align-items:start;gap:18px}
+    .grid > div{display:grid;gap:16px}
+    .hero{padding:34px 32px 28px}
+    .card{padding:26px 24px}
+    .actions{grid-template-columns:1.35fr 1fr}
+    .hero h1{font-size:34px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;animation:none !important}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ─── 상단 행사 카드 ─── -->
+  <header class="hero">
+    <span class="eyebrow">100일 감사 · 축하</span>
+    <h1>🎀 도아 백일<br><span class="accent">감사예배</span> &amp; 축하 잔치</h1>
+    <div class="hero-meta">
+      <div class="mrow">
+        <span class="ico" aria-hidden="true">📅</span>
+        <div>
+          <b>2026년 12월 30일 (수)</b>
+          <small>10:00 준비 / 12:00~15:00 본 행사</small>
+        </div>
+      </div>
+      <div class="mrow">
+        <span class="ico" aria-hidden="true">📍</span>
+        <div>
+          <b>쉐이드트리 (Shade Tree)</b>
+          <small>최대 52명 (룸 8석) · 주차 약 10대</small>
+        </div>
+      </div>
+    </div>
+    <div class="dday" id="dday"><span class="dim">행사까지</span> <b>계산 중…</b></div>
+  </header>
+
+  <div class="grid">
+
+    <!-- ─── 왼쪽: 사전 준비 체크리스트 ─── -->
+    <div>
+      <section class="card" aria-labelledby="chkTitle">
+        <div class="card-head">
+          <h2 class="card-title" id="chkTitle">사전 준비 체크리스트</h2>
+          <button type="button" class="tiny-btn" id="resetChecks">초기화</button>
+        </div>
+        <p class="card-sub">체크한 상태는 이 기기 브라우저에 자동 저장됩니다.</p>
+
+        <div class="progress-line">
+          <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0" id="barWrap"><i id="barFill"></i></div>
+          <span class="progress-num" id="progressNum">0 / 5 완료</span>
+        </div>
+
+        <ul class="checklist" id="checklist">
+          <li class="check" data-key="c1">
+            <input type="checkbox" id="c1">
+            <label class="box" for="c1" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </label>
+            <span class="check-text">
+              <b>포스터·플랜카드 문구 확정 및 출력</b>
+              <small>문구 확정 → 인쇄소 발주 · 크기·수량 확인</small>
+            </span>
+          </li>
+          <li class="check" data-key="c2">
+            <input type="checkbox" id="c2">
+            <label class="box" for="c2" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </label>
+            <span class="check-text">
+              <b>예배 순서지·답례품·데코 준비</b>
+              <small>순서지 인쇄 · 답례품 포장 · 테이블 데코</small>
+            </span>
+          </li>
+          <li class="check" data-key="c3">
+            <input type="checkbox" id="c3">
+            <label class="box" for="c3" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </label>
+            <span class="check-text">
+              <b>사회·기도·말씀·축도·사진·접수 담당자 배정</b>
+              <small>여섯 자리 담당자 이름까지 확정</small>
+            </span>
+          </li>
+          <li class="check" data-key="c4">
+            <input type="checkbox" id="c4">
+            <label class="box" for="c4" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </label>
+            <span class="check-text">
+              <b>최종 참석 인원 및 주차 차량 확정</b>
+              <small>좌석 52명(룸 8석) · 주차 약 10대 기준</small>
+            </span>
+          </li>
+          <li class="check" data-key="c5">
+            <input type="checkbox" id="c5">
+            <label class="box" for="c5" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </label>
+            <span class="check-text">
+              <b>현장 앰프·마이크 사전 테스트</b>
+              <small>앰프·무선 마이크·음원 재생 확인</small>
+            </span>
+          </li>
+        </ul>
+
+        <div class="all-done" id="allDone">🎉 준비 항목을 모두 마쳤습니다. 당일은 도아와 가족에게 집중하세요.</div>
+      </section>
+    </div>
+
+    <!-- ─── 오른쪽: 현장 보고 ─── -->
+    <div>
+      <section class="card" aria-labelledby="repTitle">
+        <div class="card-head">
+          <h2 class="card-title" id="repTitle">현장 보고</h2>
+        </div>
+        <p class="card-sub">현장에서 남긴 보고는 슬랙 <b>#pickle</b> 채널로 전송됩니다.</p>
+
+        <!-- 보고자 -->
+        <div class="field">
+          <div class="label"><span class="num">1</span> 누가 보고하나요?</div>
+          <div class="chips" id="reporterChips">
+            <button type="button" class="chip" data-name="이용식" aria-pressed="false">이용식</button>
+            <button type="button" class="chip" data-name="송은영" aria-pressed="false">송은영</button>
+            <button type="button" class="chip" data-name="이평화" aria-pressed="false">이평화</button>
+            <button type="button" class="chip" data-name="도우미" aria-pressed="false">도우미</button>
+            <button type="button" class="chip" data-custom="1" aria-pressed="false">✏️ 직접 입력</button>
+          </div>
+          <div id="customWrap" style="display:none;margin-top:9px">
+            <input type="text" id="customName" placeholder="이름을 입력하세요 (예: 김집사)" maxlength="20" autocomplete="off">
+          </div>
+        </div>
+
+        <!-- 보고 유형 -->
+        <div class="field">
+          <div class="label"><span class="num">2</span> 어떤 보고인가요?</div>
+          <div class="chips" id="typeChips">
+            <button type="button" class="chip type" data-type="ready" aria-pressed="true">✅ 준비 완료</button>
+            <button type="button" class="chip type" data-type="items" aria-pressed="false">🛒 추가 물품 요청</button>
+            <button type="button" class="chip type" data-type="sound" aria-pressed="false">🎤 음향·현장 이슈</button>
+            <button type="button" class="chip type" data-type="people" aria-pressed="false">🚗 인원·주차 변동</button>
+            <button type="button" class="chip type" data-type="memo" aria-pressed="false">📝 기타 메모</button>
+          </div>
+        </div>
+
+        <!-- 상세 내용 -->
+        <div class="field">
+          <div class="label"><span class="num">3</span> 상세 내용</div>
+          <textarea id="detail" maxlength="500" placeholder="지금 현장 상황을 적어 주세요."></textarea>
+          <div class="counter"><span id="count">0</span> / 500</div>
+          <div class="quick" id="quickChips">
+            <button type="button" data-fill="10시 현장 세팅 완료">10시 현장 세팅 완료</button>
+            <button type="button" data-fill="마이크 점검 완료">마이크 점검 완료</button>
+            <button type="button" data-fill="추가 물품 필요">추가 물품 필요</button>
+          </div>
+        </div>
+
+        <!-- 미리보기 -->
+        <div class="field">
+          <div class="label"><span class="num">4</span> 보낼 문구 미리보기</div>
+          <div class="preview" id="preview"><span class="ph">보고자와 내용을 입력하면 전송될 문구가 여기에 표시됩니다.</span></div>
+        </div>
+
+        <!-- 전송 -->
+        <div class="actions">
+          <button type="button" class="btn primary" id="sendBtn">📤 슬랙 #pickle로 보고하기</button>
+          <button type="button" class="btn ghost" id="copyBtn">📋 보고 문구 복사</button>
+        </div>
+        <p class="hint" id="sendHint">브라우저 보안 정책상 전송 성공 여부는 화면에 표시되지 않습니다. 보내신 뒤 <b>#pickle</b> 채널에서 확인해 주세요.</p>
+
+        <!-- 슬랙 연결 설정 -->
+        <details class="settings" id="settings">
+          <summary>⚙️ 슬랙(#pickle) 연결 설정</summary>
+          <div class="settings-body">
+            <label class="label" for="whInput" style="margin-bottom:6px">Incoming Webhook 주소</label>
+            <input type="password" id="whInput" placeholder="https://hooks.slack.com/services/…" autocomplete="off" spellcheck="false">
+            <div class="row">
+              <button type="button" class="btn ghost sm" id="toggleWh">👁 보이기</button>
+              <button type="button" class="btn primary sm" id="saveWh">저장</button>
+              <button type="button" class="btn ghost sm" id="clearWh">삭제</button>
+            </div>
+            <div class="wh-state" id="whState"><span class="dot" id="whDot"></span><span id="whStateText">저장된 주소가 없습니다.</span></div>
+            <p class="hint">이 주소는 <b>이 브라우저에만</b> 저장됩니다(localStorage). 공개된 곳에 올리면 슬랙이 즉시 폐기하므로, 이 화면에서 한 번만 붙여넣어 주세요.</p>
+          </div>
+        </details>
+
+        <!-- 최근 전송 기록 -->
+        <div class="history">
+          <div class="history-head">
+            <h3>최근 보고 기록</h3>
+            <button type="button" class="tiny-btn" id="clearHist">기록 지우기</button>
+          </div>
+          <ul class="hist-list" id="histList"></ul>
+          <p class="empty" id="histEmpty">아직 보낸 기록이 없습니다.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <p class="foot">
+    도아의 첫 백일을 함께 축하합니다 · <b>2026.12.30 (수) 쉐이드트리</b><br>
+    이 페이지는 가족용으로 검색에 노출되지 않습니다.
+  </p>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ───────── 저장소 ───────── */
+  var K = {
+    checks:'doa100.checks.v1',
+    reporter:'doa100.reporter.v1',
+    custom:'doa100.custom.v1',
+    type:'doa100.type.v1',
+    webhook:'doa100.webhook.v1',
+    history:'doa100.history.v1'
+  };
+  var store = {
+    get:function(k, d){ try{ var v = localStorage.getItem(k); return v===null ? d : JSON.parse(v); }catch(e){ return d; } },
+    set:function(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
+    del:function(k){ try{ localStorage.removeItem(k); }catch(e){} }
+  };
+
+  var TYPES = {
+    ready:  {emoji:'✅', label:'준비 완료'},
+    items:  {emoji:'🛒', label:'추가 물품 요청'},
+    sound:  {emoji:'🎤', label:'음향·현장 이슈'},
+    people: {emoji:'🚗', label:'인원·주차 변동'},
+    memo:   {emoji:'📝', label:'기타 메모'}
+  };
+
+  var $ = function(id){ return document.getElementById(id); };
+  var toastEl = $('toast'), toastTimer = null;
+
+  function toast(msg, kind){
+    toastEl.textContent = msg;
+    toastEl.className = 'show' + (kind ? ' ' + kind : '');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.className = ''; }, kind==='err' ? 3800 : 2600);
+  }
+
+  /* ───────── 날짜 ───────── */
+  var EVENT = new Date(2026, 11, 30, 10, 0, 0);
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function nowText(){
+    var d = new Date();
+    var w = ['일','월','화','수','목','금','토'][d.getDay()];
+    return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()) + ' (' + w + ') ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+  }
+  function shortText(iso){
+    var d = new Date(iso);
+    return (d.getMonth()+1) + '/' + d.getDate() + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+  }
+
+  // D-day
+  (function(){
+    var el = $('dday');
+    var today = new Date(); today.setHours(0,0,0,0);
+    var target = new Date(2026,11,30); target.setHours(0,0,0,0);
+    var diff = Math.round((target - today) / 86400000);
+    if (diff > 0) { el.innerHTML = '<span class="dim">행사까지</span> <b>D-' + diff + '</b>'; }
+    else if (diff === 0) { el.innerHTML = '<b>오늘입니다 🎀</b>'; }
+    else { el.innerHTML = '<span class="dim">행사일로부터</span> <b>' + Math.abs(diff) + '일 지남</b>'; }
+  })();
+
+  /* ───────── 체크리스트 ───────── */
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('#checklist input[type="checkbox"]'));
+  var checks = store.get(K.checks, {});
+
+  function paintChecks(){
+    var done = 0;
+    boxes.forEach(function(b){
+      var on = !!checks[b.id];
+      b.checked = on;
+      b.closest('.check').classList.toggle('done', on);
+      if (on) done++;
+    });
+    var pct = Math.round(done / boxes.length * 100);
+    $('barFill').style.width = pct + '%';
+    $('progressNum').textContent = done + ' / ' + boxes.length + ' 완료';
+    $('barWrap').setAttribute('aria-valuenow', String(done));
+    $('allDone').classList.toggle('show', done === boxes.length);
+  }
+
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      checks[b.id] = b.checked;
+      store.set(K.checks, checks);
+      paintChecks();
+    });
+  });
+
+  $('resetChecks').addEventListener('click', function(){
+    if (!confirm('체크한 항목을 모두 지울까요?')) return;
+    checks = {};
+    store.del(K.checks);
+    paintChecks();
+    toast('체크리스트를 초기화했습니다.');
+  });
+
+  paintChecks();
+
+  /* ───────── 보고자 ───────── */
+  var state = {
+    reporter: store.get(K.reporter, ''),
+    custom: store.get(K.custom, ''),
+    type: store.get(K.type, 'ready')
+  };
+
+  var reporterChips = Array.prototype.slice.call(document.querySelectorAll('#reporterChips .chip'));
+  var customWrap = $('customWrap'), customName = $('customName');
+
+  function reporterName(){
+    var sel = document.querySelector('#reporterChips .chip[aria-pressed="true"]');
+    if (!sel) return '';
+    if (sel.dataset.custom) return customName.value.trim();
+    return sel.dataset.name || '';
+  }
+
+  function paintReporter(){
+    var isCustom = state.reporter === '__custom';
+    reporterChips.forEach(function(c){
+      var on = isCustom ? !!c.dataset.custom : (c.dataset.name === state.reporter);
+      c.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    customWrap.style.display = isCustom ? 'block' : 'none';
+    if (isCustom) customName.value = state.custom || '';
+    updatePreview();
+  }
+
+  reporterChips.forEach(function(c){
+    c.addEventListener('click', function(){
+      if (c.dataset.custom) {
+        state.reporter = '__custom';
+        store.set(K.reporter, state.reporter);
+        paintReporter();
+        setTimeout(function(){ customName.focus(); }, 30);
+      } else {
+        state.reporter = c.dataset.name;
+        store.set(K.reporter, state.reporter);
+        paintReporter();
+      }
+    });
+  });
+
+  customName.addEventListener('input', function(){
+    state.custom = customName.value;
+    store.set(K.custom, state.custom);
+    updatePreview();
+  });
+
+  /* ───────── 보고 유형 ───────── */
+  var typeChips = Array.prototype.slice.call(document.querySelectorAll('#typeChips .chip'));
+
+  function paintType(){
+    typeChips.forEach(function(c){
+      c.setAttribute('aria-pressed', c.dataset.type === state.type ? 'true' : 'false');
+    });
+  }
+
+  typeChips.forEach(function(c){
+    c.addEventListener('click', function(){
+      state.type = c.dataset.type;
+      store.set(K.type, state.type);
+      paintType();
+      updatePreview();
+    });
+  });
+
+  /* ───────── 상세 내용 ───────── */
+  var detail = $('detail'), count = $('count');
+
+  detail.addEventListener('input', function(){
+    count.textContent = detail.value.length;
+    updatePreview();
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('#quickChips button'), function(b){
+    b.addEventListener('click', function(){
+      var t = b.dataset.fill;
+      var cur = detail.value.trim();
+      if (cur.indexOf(t) !== -1) { toast('이미 들어 있는 문구입니다.'); return; }
+      detail.value = cur ? cur + ' · ' + t : t;
+      count.textContent = detail.value.length;
+      updatePreview();
+      detail.focus();
+    });
+  });
+
+  /* ───────── 문구 조립 ───────── */
+  function compose(){
+    var t = TYPES[state.type] || TYPES.memo;
+    var name = reporterName();
+    var body = detail.value.trim();
+    var lines = [];
+    lines.push('🎀 도아 백일잔치 현장 보고');
+    lines.push('• 유형: ' + t.emoji + ' ' + t.label);
+    lines.push('• 보고자: ' + (name || '(미선택)'));
+    lines.push('• 시간: ' + nowText());
+    lines.push('• 내용: ' + (body || '(내용 없음)'));
+    return lines.join('\n');
+  }
+
+  function updatePreview(){
+    var box = $('preview');
+    var name = reporterName();
+    var body = detail.value.trim();
+    if (!name && !body) {
+      box.innerHTML = '<span class="ph">보고자와 내용을 입력하면 전송될 문구가 여기에 표시됩니다.</span>';
+      return;
+    }
+    box.textContent = compose();
+  }
+
+  /* ───────── 웹훅 ───────── */
+  var whInput = $('whInput'), whState = $('whState'), whDot = $('whDot'), whStateText = $('whStateText');
+  var settings = $('settings');
+
+  function getWebhook(){ return (store.get(K.webhook, '') || '').trim(); }
+
+  function maskUrl(u){
+    if (!u) return '';
+    try {
+      var tail = u.slice(-6);
+      return 'https://hooks.slack.com/…' + tail;
+    } catch(e){ return '저장됨'; }
+  }
+
+  function paintWh(){
+    var u = getWebhook();
+    if (u) {
+      whState.classList.add('on');
+      whDot.classList.add('on');
+      whStateText.textContent = '연결됨 · ' + maskUrl(u);
+    } else {
+      whState.classList.remove('on');
+      whDot.classList.remove('on');
+      whStateText.textContent = '저장된 주소가 없습니다.';
+    }
+  }
+
+  whInput.value = getWebhook();
+  paintWh();
+
+  $('toggleWh').addEventListener('click', function(){
+    var show = whInput.type === 'password';
+    whInput.type = show ? 'text' : 'password';
+    this.textContent = show ? '🙈 가리기' : '👁 보이기';
+  });
+
+  $('saveWh').addEventListener('click', function(){
+    var v = whInput.value.trim();
+    if (!v) { toast('Webhook 주소를 입력해 주세요.', 'err'); whInput.focus(); return; }
+    if (!/^https:\/\/hooks\.slack\.com\/services\/[A-Za-z0-9\/_-]+$/.test(v)) {
+      toast('주소 형식이 아닙니다. https://hooks.slack.com/services/… 로 시작해야 합니다.', 'err');
+      whInput.focus();
+      return;
+    }
+    store.set(K.webhook, v);
+    paintWh();
+    toast('저장했습니다. 이제 보고를 보낼 수 있습니다.', 'ok');
+    settings.open = false;
+  });
+
+  $('clearWh').addEventListener('click', function(){
+    if (!getWebhook()) { toast('저장된 주소가 없습니다.'); return; }
+    if (!confirm('저장된 Webhook 주소를 이 브라우저에서 지울까요?')) return;
+    store.del(K.webhook);
+    whInput.value = '';
+    paintWh();
+    toast('주소를 삭제했습니다.');
+  });
+
+  /* ───────── 전송 기록 ───────── */
+  var histList = $('histList'), histEmpty = $('histEmpty');
+
+  function getHist(){ var h = store.get(K.history, []); return Array.isArray(h) ? h : []; }
+
+  function paintHist(){
+    var h = getHist();
+    histList.innerHTML = '';
+    histEmpty.style.display = h.length ? 'none' : 'block';
+    h.forEach(function(item){
+      var li = document.createElement('li');
+      li.className = 'hist';
+
+      var badge = document.createElement('span');
+      badge.className = 'badge' + (item.kind === 'copy' ? ' copy' : item.kind === 'fail' ? ' fail' : '');
+      badge.textContent = item.kind === 'copy' ? '복사' : item.kind === 'fail' ? '실패' : '전송';
+
+      var body = document.createElement('div');
+      body.className = 'hist-body';
+
+      var head = document.createElement('div');
+      var who = document.createElement('span');
+      who.className = 'who';
+      who.textContent = item.reporter || '보고자 미선택';
+      var when = document.createElement('span');
+      when.className = 'when';
+      when.textContent = shortText(item.at);
+      head.appendChild(who);
+      head.appendChild(when);
+
+      var what = document.createElement('div');
+      what.className = 'what';
+      what.textContent = item.typeLabel + ' · ' + (item.text || '(내용 없음)');
+
+      body.appendChild(head);
+      body.appendChild(what);
+      li.appendChild(badge);
+      li.appendChild(body);
+      histList.appendChild(li);
+    });
+  }
+
+  function addHist(kind){
+    var t = TYPES[state.type] || TYPES.memo;
+    var h = getHist();
+    h.unshift({
+      kind: kind,
+      at: new Date().toISOString(),
+      reporter: reporterName(),
+      typeLabel: t.emoji + ' ' + t.label,
+      text: detail.value.trim().slice(0, 120)
+    });
+    store.set(K.history, h.slice(0, 20));
+    paintHist();
+  }
+
+  $('clearHist').addEventListener('click', function(){
+    if (!getHist().length) { toast('지울 기록이 없습니다.'); return; }
+    if (!confirm('최근 보고 기록을 모두 지울까요?')) return;
+    store.del(K.history);
+    paintHist();
+    toast('기록을 지웠습니다.');
+  });
+
+  /* ───────── 복사 ───────── */
+  function copyText(text){
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function(resolve, reject){
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.top = '-1000px';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        ok ? resolve() : reject(new Error('copy failed'));
+      } catch(e){ reject(e); }
+    });
+  }
+
+  $('copyBtn').addEventListener('click', function(){
+    var name = reporterName();
+    if (!name) { toast('보고자를 먼저 선택해 주세요.', 'err'); return; }
+    if (!detail.value.trim()) { toast('상세 내용을 입력해 주세요.', 'err'); detail.focus(); return; }
+    copyText(compose()).then(function(){
+      addHist('copy');
+      toast('보고 문구를 복사했습니다. 슬랙에 붙여넣어 주세요.', 'ok');
+    }).catch(function(){
+      toast('복사하지 못했습니다. 미리보기 문구를 길게 눌러 복사해 주세요.', 'err');
+    });
+  });
+
+  /* ───────── 전송 ───────── */
+  var sendBtn = $('sendBtn');
+  var sending = false;
+
+  sendBtn.addEventListener('click', function(){
+    if (sending) return;
+    var url = getWebhook();
+    var name = reporterName();
+
+    if (!name) {
+      toast('보고자를 먼저 선택해 주세요.', 'err');
+      document.getElementById('reporterChips').scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+    if (!detail.value.trim()) {
+      toast('상세 내용을 입력해 주세요.', 'err');
+      detail.focus();
+      return;
+    }
+    if (!url) {
+      toast('먼저 ⚙️ 슬랙(#pickle) 연결 설정에서 Webhook 주소를 저장해 주세요.', 'err');
+      settings.open = true;
+      settings.scrollIntoView({behavior:'smooth', block:'center'});
+      setTimeout(function(){ whInput.focus(); }, 300);
+      return;
+    }
+
+    var message = compose();
+    sending = true;
+    sendBtn.disabled = true;
+    sendBtn.textContent = '📤 전송 중…';
+
+    fetch(url, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+      body: JSON.stringify({ text: message })
+    }).then(function(){
+      addHist('slack');
+      toast('✅ 슬랙 #pickle로 보냈습니다. 채널에서 확인해 주세요.', 'ok');
+      detail.value = '';
+      count.textContent = '0';
+      updatePreview();
+    }).catch(function(err){
+      addHist('fail');
+      toast('전송하지 못했습니다. 네트워크와 Webhook 주소를 확인해 주세요.', 'err');
+    }).then(function(){
+      sending = false;
+      sendBtn.disabled = false;
+      sendBtn.textContent = '📤 슬랙 #pickle로 보고하기';
+    });
+  });
+
+  /* ───────── 초기화 ───────── */
+  paintReporter();
+  paintType();
+  paintHist();
+  updatePreview();
+
+  if (!getWebhook()) {
+    // 첫 방문 안내는 조용히: 설정 패널을 열어 두지 않고 힌트만 남긴다.
+  }
+})();
+</script>
+</body>
+</html>
