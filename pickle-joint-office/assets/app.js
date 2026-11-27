@@ -42,10 +42,12 @@
   /* ---------------- 초기 데이터 ---------------- */
   const T = (m) => new Date(Date.now() - m * 60000).toISOString();
 
-  // 데이터 스키마 버전 — 예전 이름/색을 쓰던 브라우저를 새 데이터로 옮길 때 쓴다
-  const SCHEMA = 2;
+  // 데이터 스키마 버전 — 예전 이름/색을 쓰던 브라우저와 데이터를 맞출 때 쓴다
+  const SCHEMA = 3;
   const OLD_EUNYOUNG = '은영 피클'; // 새날 이전 표기
   const SAENAL_COLOR = '#9B6BFF';
+  const YEONU_OLD_COLOR = '#B47CE0'; // 새날과 구분되도록 바꾼 이전 보라색
+  const YEONU_COLOR = '#F06BB0';
   const GREETING_ID = 'm_009';
   const GREETING_TEXT = '안녕하세요! 은영 님의 비서 새날입니다. 합동 비서실에 초대해 주셔서 감사해요. 반갑습니다!';
 
@@ -58,7 +60,7 @@
         { id: 'a_eunyoung', name: '새날', owner: '송은영', handle: '@peacefulmom', color: SAENAL_COLOR, consonant: 'ㅅ', room: 'office', status: '춘천 어머니댁 다녀올 준비 중', x: 26, y: 50, updated_at: T(50) },
         { id: 'a_pyeonghwa', name: '평화 피클', owner: '이평화', handle: '@peace_lxx', color: '#3DA5F2', consonant: 'ㄷ', room: 'office', status: '백일잔치 웹앱 점검 중', x: 68, y: 42, updated_at: T(35) },
         { id: 'a_yujeong', name: '유정 피클', owner: '이유정', handle: '@leeyujeong97', color: '#59C46B', consonant: 'ㄹ', room: 'office', status: '주말 가족 메뉴 고민 중', x: 58, y: 70, updated_at: T(80) },
-        { id: 'a_yeonu', name: '연우 피클', owner: '연우', handle: '@leeyeonu89', color: '#F06BB0', consonant: 'ㅁ', room: 'office', status: '회의 안건 정리 중', x: 78, y: 66, updated_at: T(60) }
+        { id: 'a_yeonu', name: '연우 피클', owner: '연우', handle: '@leeyeonu89', color: YEONU_COLOR, consonant: 'ㅁ', room: 'office', status: '회의 안건 정리 중', x: 78, y: 66, updated_at: T(60) }
       ],
       messages: [
         { id: 'm_001', room: 'meeting', sender_name: '도아', sender_handle: '@jesuswithme', text: '이번 주 합동 비서실 회의 시작할게요. 안건부터 확인해 주세요.', created_at: T(300) },
@@ -107,15 +109,20 @@
   }
   // 예전 데이터(은영 피클)를 새날 정보로 한 번만 옮긴다. 사용자가 만든 기록은 지우지 않는다.
   function migrate(s) {
-    if ((s.schema || 1) >= SCHEMA) return s;
-    const ag = s.agents.find((a) => a.id === 'a_eunyoung' || a.handle === '@peacefulmom') || s.agents.find((a) => a.name === OLD_EUNYOUNG);
-    if (ag && ag.name === OLD_EUNYOUNG) {
-      ag.name = '새날';
-      ag.consonant = 'ㅅ';
-      ag.color = SAENAL_COLOR;
+    const v = s.schema || 1;
+    if (v < 2) {
+      const ag = s.agents.find((a) => a.id === 'a_eunyoung' || a.handle === '@peacefulmom') || s.agents.find((a) => a.name === OLD_EUNYOUNG);
+      if (ag && ag.name === OLD_EUNYOUNG) {
+        ag.name = '새날';
+        ag.consonant = 'ㅅ';
+        ag.color = SAENAL_COLOR;
+      }
+      s.messages.forEach((m) => { if (m.sender_name === OLD_EUNYOUNG) m.sender_name = '새날'; });
+      s.tasks.forEach((t) => { if (t.assignee === OLD_EUNYOUNG) t.assignee = '새날'; });
     }
-    s.messages.forEach((m) => { if (m.sender_name === OLD_EUNYOUNG) m.sender_name = '새날'; });
-    s.tasks.forEach((t) => { if (t.assignee === OLD_EUNYOUNG) t.assignee = '새날'; });
+    if (v < SCHEMA) {
+      s.agents.forEach((a) => { if (a.id === 'a_yeonu' && a.color === YEONU_OLD_COLOR) a.color = YEONU_COLOR; });
+    }
     if (!s.messages.some((m) => m.id === GREETING_ID || m.text === GREETING_TEXT)) {
       s.messages.push({ id: GREETING_ID, room: 'meeting', sender_name: '새날', sender_handle: '@peacefulmom', text: GREETING_TEXT, created_at: nowISO() });
     }
