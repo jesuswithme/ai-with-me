@@ -635,7 +635,7 @@
     if ($('#new-as-me').checked) { myId = a.id; localStorage.setItem(LS_MY, myId); }
     closeModal($('#modal-new'));
     save(['agents', 'messages']);
-    toast(name + ' 피클 입장 완료!');
+    toast(name + ' 입장 완료!');
   });
 
   /* --- 캐릭터 카드 --- */
