@@ -147,7 +147,15 @@
 
   if (bc) {
     bc.onmessage = (e) => {
-      if (!e.data || e.data.type !== 'state') return;
+      if (!e.data) return;
+      if (e.data.type === 'reset') {
+        state = normalize(e.data.state);
+        tomb.clear();
+        try { localStorage.setItem(LS_STATE, JSON.stringify(state)); } catch (err) { }
+        render();
+        return;
+      }
+      if (e.data.type !== 'state') return;
       if (mergeRemote(e.data.state)) render();
     };
   }
@@ -912,6 +920,7 @@
     myId = state.agents[0].id;
     localStorage.setItem(LS_MY, myId);
     localStorage.setItem(LS_STATE, JSON.stringify(state));
+    if (bc) { try { bc.postMessage({ type: 'reset', state: state }); } catch (e) { } }
     render();
     toast('초기 상태로 돌렸어요');
     closeModal($('#modal-db'));
